@@ -4,12 +4,15 @@ const express = require("express");
 const logger = require("morgan");
 // added (mongoose npm) => object modeling tool designed to work in an asynchronous environment
 const mongoose = require("mongoose");
+// added require path
 const path = require("path");
 // added required controller to the server
 const routes = require("./controllers");
+// loads environment variables from a .env file into process.env.
+require("dotenv").config();
 
-// connect to mongo
-mongoose.connect("mongodb://localhost/workout", {
+// connect to mongo MONGODB_URI
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
