@@ -34,7 +34,9 @@ router.put("/:id", (req, res) => {
  */
 const getSixDaysAgoDate = () => {
 	let sixDaysAgo = new Date(Date.now() - 6 * 24 * 60 * 60 * 1000);
+	// at midnight
 	sixDaysAgo.setHours(0, 0, 0, 0);
+	// returning the days
 	return sixDaysAgo;
 };
 
