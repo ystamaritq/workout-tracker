@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Exercise = mongoose.model(
 	"Exercise",
-	new Schema({
+	new mongoose.Schema({
 		type: {
 			type: String,
 			trim: true,
