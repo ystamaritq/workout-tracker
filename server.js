@@ -2,27 +2,35 @@
 const express = require("express");
 // added (morgan npm) =>  HTTP request logger middleware for node.js
 const logger = require("morgan");
+// added (mongoose npm) => object modeling tool designed to work in an asynchronous environment
+// const mongoose = require("mongoose");
 const path = require("path");
-
-const seed = require("./seeders/seed");
 
 // setting the server port
 const PORT = process.env.PORT || 3000;
 
-// set the node require ./models
-const db = require("./models");
-
 // creating an express application
 const app = express();
+
 // set the app to use logger npm
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
+
 app.use(express.static("public"));
+
+app.get("/", function (req, res) {
+	res.sendFile(path.join(__dirname, "./public/index.html"));
+});
 
 app.get("/exercise", function (req, res) {
 	res.sendFile(path.join(__dirname, "./public/exercise.html"));
+});
+
+app.get("/stats", function (req, res) {
+	res.sendFile(path.join(__dirname, "./public/stats.html"));
 });
 
 app.listen(PORT, () => {
