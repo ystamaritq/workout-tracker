@@ -8,8 +8,10 @@ const path = require("path");
 // added required controller to the server
 const routes = require("./controllers");
 
-// connect to mongo
-mongoose.connect("mongodb://localhost/workout", {
+require("dotenv").config();
+
+// connect to mongo MONGODB_URI
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });

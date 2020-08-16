@@ -29,7 +29,8 @@ router.put("/:id", (req, res) => {
 		.catch((err) => res.json(err)); // send error;;
 });
 
-//
+// workouts in the last 7 days
+
 router.get("/range", (req, res) => {
 	db.Workout.find({})
 		.then((workouts) => res.json(workouts))
