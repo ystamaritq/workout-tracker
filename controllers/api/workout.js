@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 		.catch((err) => res.json(err));
 });
 
-// create new workout
+// create new workout , ('api/workouts')
 router.post("/", (req, res) => {
 	// inserting a new workout
 	db.Workout.create(req.body) // create new workout
