@@ -52,21 +52,17 @@ Link to **GitHub Repo** used for application development - [Workout Tracker GitH
 
 ## Installation Instructions
 
-In order to **successfully** develop and launch this website, the following items must be **installed and/or accessible** from your working environment _(i.e. laptop, computer, etc._).
+To test this project, simply follow these steps:
 
-- **Node.js** - Make sure Node.js is installed in your machine. If Node.js is not installed on your machine, [click here](https://nodejs.org/en/) to download the application.
+**Pre-requirements:** `Have an available connection to Mongo database`
 
-- **Node Modules** - This project used various `node modules`, which are listed in the package.json files listed in both the `main root folder` of this application. Please run `npm install or npm i` in your terminal in order to install all required node modules.
+1. Make sure **node.js** is installed in your machine. If not is installed in your machine [click here](https://nodejs.org/en/) to download the application.
 
-- **Clone** the following project into a your local file system and follow these steps:
+2. Run `npm install or npm i` in your terminal in order to install all required **node modules** listed in the package.json.
 
-```
-git clone https://github.com/ystamaritq/workout-tracker.git
-cd workout-tracker
-code .
-run npm install
-run node server.js
-```
+3. Clone the following project into a your local file system `git clone https://github.com/ystamaritq/workout-tracker.git`
+
+4. Then `run node server.js` in order to start locally the App/
 
 ### Project Technologies
 
