@@ -29,10 +29,20 @@ router.put("/:id", (req, res) => {
 		.catch((err) => res.json(err)); // send error;;
 });
 
-// workouts in the last 7 days
+/**
+ * get the date at midnight six days from now
+ */
+const getSixDaysAgoDate = () => {
+	let sixDaysAgo = new Date(Date.now() - 6 * 24 * 60 * 60 * 1000);
+	sixDaysAgo.setHours(0, 0, 0, 0);
+	return sixDaysAgo;
+};
 
+// workouts in the last 7 days
 router.get("/range", (req, res) => {
-	db.Workout.find({})
+	db.Workout.find({
+		day: { $gte: getSixDaysAgoDate() },
+	})
 		.then((workouts) => res.json(workouts))
 		.catch((err) => res.json(err));
 });
