@@ -20,7 +20,6 @@ const Exercise = mongoose.model(
 		weight: Number,
 		reps: Number,
 		sets: Number,
-		duration: Number,
 		distance: Number,
 	})
 );
